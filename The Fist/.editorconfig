@@ -1,0 +1,26 @@
+# top-most EditorConfig file
+root = true
+
+# → apply to all files
+[*]
+indent_style = space
+indent_size = 4
+tab_width    = 4                                  # 2-space tabs if tabs ever get used :contentReference[oaicite:0]{index=0}
+
+# → C#-only overrides
+[*.cs]
+
+# 1) Always use braces around control-flow blocks
+csharp_prefer_braces               = true:error  # enforce `{}` on if/for/while/switch/etc. :contentReference[oaicite:1]{index=1}
+dotnet_diagnostic.IDE0011.severity = error      # IDE0011: Add braces :contentReference[oaicite:2]{index=2}
+
+# 2) 2-space indent (already inherited from [*], but you could repeat here if you like)
+# indent_style = space
+# indent_size  = 2
+
+# 3) Single space around assignments (and all binary ops)
+csharp_space_around_binary_operators = before_and_after  # ensures `var x = 4;` not `var x=4;` :contentReference[oaicite:3]{index=3}
+
+# optional niceties:
+# require a space after keywords in control-flow (if/for/etc.)
+csharp_space_after_keywords_in_control_flow_statements = true
